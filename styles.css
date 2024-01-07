@@ -180,9 +180,15 @@ a {
   margin-bottom: 1vh;
 }
 
+#contact .section-content:hover {
+  background-color: inherit;
+  transition: none;
+  transform: none;
+}
+
 .section-content:hover {
+  background-color: #ffffff10;
   transition: 0.5s;
-  background-color: #ffffff1b;
   transform: scale(1.02);
 }
 
@@ -195,6 +201,19 @@ a {
 
 .role i {
   transform: scale(0.8);
+  transition: 0.5s;
+}
+
+.role i:hover {
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+.contact {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin: 0;
+  max-width: fit-content;
 }
 
 .title {
