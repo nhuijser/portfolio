@@ -19,14 +19,9 @@
         }
       );
     </script>
-    <!-- particles -->
-    <div class="dark-mode-button">
-      <i
-        id="moon-icon"
-        class="fa-solid fa-moon fa-2xl"
-        style="color: #ffffff"
-      ></i>
-    </div>
+<div class="dark-mode-button">
+<i id="switch-icon" class="fa-solid fa-sun fa-2xl" style="color: #ffffff;"></i>
+</div>
     <div class="header">
       <h1><strong>Nathan</strong></h1>
       <p class="type"><strong>Software Developer Student</strong></p>
@@ -35,7 +30,6 @@
         people's lives.
       </p>
     </div>
-
     <div class="nav">
       <strong>
         <ul>
