@@ -33,9 +33,6 @@
     <div class="nav">
       <strong>
         <ul>
-          <a href="#about"
-            ><li><p>━ About me</p></li></a
-          >
           <a href="#projects"
             ><li><p>━ Projects</p></li></a
           >
@@ -47,20 +44,6 @@
     </div>
 
     <div class="right-section">
-    <div class="section" id="projects">
-        <div class="section-content">
-          <h3 class="role">
-            balls.com<a href="https://github.com/nhuijser"><i class="fa-brands fa-github fa-xl"></i></a>
-          </h3>
-          <h4 class="title">Senior Developer</h4>
-          <p class="text-area">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-            minima iure ipsum eligendi sapiente tempore corporis possimus. Esse,
-            hic debitis? Similique blanditiis sunt delectus, deserunt eaque
-            quisquam alias?
-          </p>
-        </div>
-      </div>
       <?php 
       $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
 

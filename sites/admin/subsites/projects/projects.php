@@ -51,7 +51,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       echo "<div class='project-" . $row['idprojects'] . "'>";
       echo "<p>" . $row['description'] . "</p>";
       echo "<i class='fas fa-user'></i> <span class='role'>" . $row['role'] . "</span><br>";
-      echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a>";
+      echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a><br>";
       echo "</div>";
       echo "</details>";
     echo '<div class="buttons">';
@@ -69,7 +69,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     echo "<div class='project-" . $row['idprojects'] . "'>";
     echo "<p>" . $row['description'] . "</p>";
     echo "<i class='fas fa-user'></i> <span class='role'>" . $row['role'] . "</span><br>";
-    echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a>";
+    echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a><br>";
     echo "</div>";
     echo "</details>";
     echo '<div class="buttons">';

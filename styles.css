@@ -71,7 +71,7 @@ body {
   color: #fff;
   overflow: hidden;
   text-align: left; /* Align text to the center */
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-left: 15vw;
   font-family: "Roboto", sans-serif;
 }
@@ -207,12 +207,12 @@ a {
 }
 
 .role i {
-  transform: scale(0.8);
+  transform: scale(0.7);
   transition: 0.5s;
 }
 
 .role i:hover {
-  transform: scale(0.9);
+  transform: scale(0.8);
   transition: 0.5s;
 }
 
