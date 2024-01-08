@@ -31,26 +31,24 @@
 
       foreach ($result as $row) {
         echo '<div class="section" id="projects">
-  <div class="section-content">
-    <h3 class="role"><span>
-      ' . $row['project'] . '</span><a href="' . $row['github'] . '"><i class="fa-brands fa-github fa-xl"></i></a>
-    </h3>
-    <h4 class="title">' . $row['role'] . '</h4>
-    <p class="text-area">' . $row['description'] . '</p>';
-
-    // Fetch tags from the database
-    if (!empty($row['tags'])) {
-      $tags = explode(',', $row['tags']); // Assuming tags are stored as a comma-separated string
-
-      echo '<div class="tags">';
-      foreach ($tags as $tag) {
-        echo '<p>' . $tag . '</p>';
-      }
-      echo '</div>';
-    }
-
-echo '</div>
-</div>';
+        <div class="section-content">
+          <h3 class="role"><span>
+            ' . $row['project'] . '</span><a href="' . $row['github'] . '"><i class="fa-brands fa-github fa-xl"></i></a>
+          </h3>
+          <h4 class="title">' . $row['role'] . '</h4>
+          <p class="text-area">' . $row['description'] . '</p>';
+      
+          // Fetch tags from the database
+          $tags = explode(',', $row['tags']); // Assuming tags are stored as a comma-separated string
+      
+          echo '<div class="tags">';
+          foreach ($tags as $tag) {
+            echo '<p>' . $tag . '</p>';
+          }
+          echo '</div>';
+      
+      echo '</div>
+      </div>';
       }
     ?>
 
