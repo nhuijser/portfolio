@@ -70,6 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     echo "<p>" . $row['description'] . "</p>";
     echo "<i class='fas fa-user'></i> <span class='role'>" . $row['role'] . "</span><br>";
     echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a><br>";
+    echo "<i class='fas fa-tag'></i> <span class='tags'>" . $row['tags'] . "</span><br>";
     echo "</div>";
     echo "</details>";
     echo '<div class="buttons">';
@@ -93,7 +94,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
   sections.forEach((section) => {
     section.addEventListener('click', (event) => {
-      console.log(event.target.tagName)
       if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I' || event.target.tagName === 'INPUT' || event.target.tagName === "P") {
         return;
       }
@@ -183,6 +183,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     const projectGithubLink = document.querySelector('.project-' + editButton.dataset.id + ' a');
 projectGithubLink.contentEditable = true;
+const tagsSpan = document.querySelector('.project-' + editButton.dataset.id + ' .tags');
+tagsSpan.contentEditable = true;
 
 const roleText = document.querySelector('.project-' + editButton.dataset.id + ' span');
 roleText.contentEditable = true;
@@ -192,6 +194,10 @@ projectGithubLink.addEventListener('click', function(event) {
 });
 
 roleText.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+tagsSpan.addEventListener('click', function(event) {
     event.stopPropagation();
 });
     const projectDescription = document.querySelector('.project-' + editButton.dataset.id + ' p');
@@ -212,24 +218,23 @@ roleText.addEventListener('click', function(event) {
       projectDescription.parentNode.appendChild(cancelButton);
 
       submitButton.addEventListener('click', () => {
-        console.log("Submit button clicked");
-        fetch('../../endpoints/edit_project.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: 'id=' + editButton.dataset.id + '&project=' + projectTitle.innerHTML + '&description=' + projectDescription.innerHTML + '&github=' + projectGithubLink.innerHTML + '&role=' + roleText.innerHTML,
-        })
-        .then(response => response.text())
-        .then(data => {
-          console.log(data);
-          location.reload();
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-      });
-
+  console.log("Submit button clicked");
+  fetch('../../endpoints/edit_project.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
+  })
+  .then(response => response.text())
+  .then(data => {
+    console.log(data);
+    location.reload();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+});
       // add event listener to the cancel button
       cancelButton.addEventListener('click', () => {
         console.log("Cancel button clicked");

@@ -187,6 +187,22 @@ a {
   transform: scale(1.02);
 }
 
+h3.role span {
+  transition: 0.5s;
+}
+
+.section-content:hover h3.role span {
+  font-size: 2.3rem;
+  transition: 0.5s;
+}
+
+.section-content p {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin: 0;
+  max-width: 30vw;
+}
+
 .role {
   color: rgb(255, 255, 255);
   font-size: 2rem;
@@ -216,4 +232,22 @@ a {
   font-size: 1.5rem;
   color: #ffffffb6;
   font-weight: bold;
+  margin-bottom: 2.5vh;
+}
+
+.tags {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.tags p {
+  margin-top: 2.5vh;
+  margin-right: 0.25vw;
+  color: #ffffffc5;
+  padding: 0.5rem 1rem; /* add some padding to each tag */
+  font-size: 1rem;
+  background-color: #ebebeb2d; /* change this to the color you want */
+  border-radius: 20px; /* make the tags round */
+  border: none; /* remove the border */
 }
