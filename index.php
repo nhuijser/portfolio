@@ -47,7 +47,7 @@
     </div>
 
     <div class="right-section">
-      <div class="section" id="projects">
+    <div class="section" id="projects">
         <div class="section-content">
           <h3 class="role">
             balls.com<a href="https://github.com/nhuijser"><i class="fa-brands fa-github fa-xl"></i></a>
@@ -61,33 +61,30 @@
           </p>
         </div>
       </div>
-      <div class="section" id="projects">
+      <?php 
+      $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+
+      $sql = "SELECT * FROM projects WHERE deleted = 0;";
+
+      $result = $dbh->query($sql);
+      $count = 0;
+
+      foreach ($result as $row) {
+
+      echo "<script>console.log($row)</script>";
+       echo '<div class="section" id="projects">
         <div class="section-content">
           <h3 class="role">
-            balls.com<a href="https://github.com/nhuijser"><i class="fa-brands fa-github fa-xl"></i></a>
+            ' . $row['project'] . '<a href="' . $row['github'] . '"><i class="fa-brands fa-github fa-xl"></i></a>
           </h3>
-          <h4 class="title">Senior Developer</h4>
-          <p class="text-area">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-            minima iure ipsum eligendi sapiente tempore corporis possimus. Esse,
-            hic debitis? Similique blanditiis sunt delectus, deserunt eaque
-            quisquam alias?
-          </p>
+          <h4 class="title">' . $row['role'] . '</h4>
+          <p class="text-area">' . $row['description'] . '</p>
         </div>
-      </div>
-      <div class="section" id="projects">
-        <div class="section-content">
-          <h3 class="role">
-            balls.com<a href="https://github.com/nhuijser"><i class="fa-brands fa-github fa-xl"></i></a>
-          </h3>
-          <h4 class="title">Senior Developer</h4>
-          <p class="text-area">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-            minima iure ipsum eligendi sapiente tempore corporis possimus. Esse,
-            hic debitis? Similique blanditiis sunt delectus, deserunt eaque
-            quisquam alias?
-          </p>
-        </div>
+      ';
+      
+      }
+
+      ?>
       </div>
       <div class="section" id="contact">
         <div class="section-content" >

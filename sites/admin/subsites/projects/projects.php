@@ -42,16 +42,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   while ($row = $result->fetch()) {
     echo "<script>console.log('" . $row['deleted'] . "')</script>";
     if($row['deleted'] == 1) {
-    echo "<section class='content-deleted'>";
-    echo "<div class='project-container-deleted'>";
-    echo "<details>";
-    echo "<summary>";
-    echo  "<strong>" . $row['project'] . "</strong>";
-    echo "</summary>";
-    echo "<div class='project-deleted'>";
-    echo "<p>" . $row['description'] . "</p>";
-    echo "</div>";
-    echo "</details>";
+      echo "<section class='content-deleted'>";
+      echo "<div class='project-container-deleted'>";
+      echo "<details>";
+      echo "<summary>";
+      echo  "<strong>" . $row['project'] . "</strong>";
+      echo "</summary>";
+      echo "<div class='project-" . $row['idprojects'] . "'>";
+      echo "<p>" . $row['description'] . "</p>";
+      echo "<i class='fas fa-user'></i> <span class='role'>" . $row['role'] . "</span><br>";
+      echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a>";
+      echo "</div>";
+      echo "</details>";
     echo '<div class="buttons">';
     echo '<button class="showButton" id="showButton" data-id="' . $row['idprojects'] . '"><i class="fa-regular fa-eye fa-normal" style="color: #6d63f7;"></i></button>';
     echo '</div>';
@@ -66,6 +68,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     echo "</summary>";
     echo "<div class='project-" . $row['idprojects'] . "'>";
     echo "<p>" . $row['description'] . "</p>";
+    echo "<i class='fas fa-user'></i> <span class='role'>" . $row['role'] . "</span><br>";
+    echo "<i class='fab fa-github'></i> <a href='" . $row['github'] . "' target='_blank'>" . $row['github'] . "</a>";
     echo "</div>";
     echo "</details>";
     echo '<div class="buttons">';
@@ -80,6 +84,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </main>
     </div>
     <script>
+
 
       // existing code...
 
@@ -170,23 +175,35 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   const editButtons = document.querySelectorAll('.editButton'); 
   editButtons.forEach((editButton) => {
     editButton.addEventListener('click', () => {
-      console.log("Edit button clicked");
+    console.log("Edit button clicked");
 
-      const projectTitle = document.querySelector('.project-' + editButton.dataset.id).parentNode.querySelector('summary strong');
-      projectTitle.contentEditable = true;
-      projectTitle.focus();
+    const projectTitle = document.querySelector('.project-' + editButton.dataset.id).parentNode.querySelector('summary strong');
+    projectTitle.contentEditable = true;
+    projectTitle.focus();
 
-      const projectDescription = document.querySelector('.project-' + editButton.dataset.id);
-      projectDescription.contentEditable = true;
-      projectDescription.focus();
+    const projectGithubLink = document.querySelector('.project-' + editButton.dataset.id + ' a');
+projectGithubLink.contentEditable = true;
 
-      const summary = projectDescription.parentNode
-      summary.open = true;
+const roleText = document.querySelector('.project-' + editButton.dataset.id + ' span');
+roleText.contentEditable = true;
 
-      const submitButton = document.createElement('button');
-      submitButton.classList.add('btn');
-      submitButton.innerHTML = '<i class="fas fa-check fa-normal" style="color: #00ff00;"></i>';
+projectGithubLink.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
 
+roleText.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+    const projectDescription = document.querySelector('.project-' + editButton.dataset.id + ' p');
+    projectDescription.contentEditable = true;
+    projectDescription.focus();
+
+    const summary = projectDescription.parentNode.parentNode;
+    summary.open = true;
+
+    const submitButton = document.createElement('button');
+    submitButton.classList.add('btn');
+    submitButton.innerHTML = '<i class="fas fa-check fa-normal" style="color: #00ff00;"></i>';
       const cancelButton = document.createElement('button');
       cancelButton.classList.add('btn');
       cancelButton.innerHTML = '<i class="fas fa-times fa-normal" style="color: #ff1900;"></i>';
@@ -201,7 +218,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: 'id=' + editButton.dataset.id + '&project=' + projectTitle.innerHTML + '&description=' + projectDescription.innerHTML,
+          body: 'id=' + editButton.dataset.id + '&project=' + projectTitle.innerHTML + '&description=' + projectDescription.innerHTML + '&github=' + projectGithubLink.innerHTML + '&role=' + roleText.innerHTML,
         })
         .then(response => response.text())
         .then(data => {
@@ -218,6 +235,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         console.log("Cancel button clicked");
         projectTitle.contentEditable = false;
         projectDescription.contentEditable = false;
+        projectGithubLink.contentEditable = false;
+        roleText.contentEditable = false;
         projectDescription.parentNode.removeChild(submitButton);
         projectDescription.parentNode.removeChild(cancelButton);
 
