@@ -8,7 +8,7 @@ try {
 
     // Insert a new project
     $new_id = $total + 1;
-    $dbh->exec("INSERT INTO projects (idprojects, project, description, github, role, deleted) VALUES ($new_id, 'New Project', 'New Project Description', `https://github.com/nhuijser`, 'Developer', 0)");
+    $dbh->exec("INSERT INTO projects (idprojects, project, description, role, github, deleted) VALUES ($new_id, 'New Project', 'New Project Description', 'Developer', 'https://github.com/nhuijser', 0)");
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

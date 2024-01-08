@@ -6,15 +6,15 @@
 
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 #background {
@@ -166,11 +166,6 @@ a {
   max-width: 30vw;
 }
 
-.section [id="experience"] {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-}
-
 .section-content {
   padding-left: 5vw;
   padding-top: 5vh;
@@ -178,6 +173,11 @@ a {
   border-radius: 2.5vw;
   transition: 0.5s;
   margin-bottom: 1vh;
+  width: 75%;
+  float: right;
+  text-align: left;
+  padding-bottom: 5vh;
+  transition: 0.5s;
 }
 
 #contact .section-content:hover {
@@ -190,13 +190,6 @@ a {
   background-color: #ffffff10;
   transition: 0.5s;
   transform: scale(1.02);
-}
-
-.timeline-div {
-  position: absolute;
-  width: 20%;
-  height: 100%;
-  font-size: 1.5rem;
 }
 
 .role {
@@ -228,12 +221,4 @@ a {
   font-size: 1.5rem;
   color: #ffffffb6;
   font-weight: bold;
-}
-
-.section-content {
-  width: 75%;
-  float: right;
-  text-align: left;
-  padding-bottom: 5vh;
-  transition: 0.5s;
 }
