@@ -64,13 +64,14 @@ body {
   transition: 0.5s;
 }
 .header {
+  display: flex;
+  flex-direction: column;
   text-align: left;
   justify-content: left;
-  position: relative;
   color: #fff;
   overflow: hidden;
   text-align: left; /* Align text to the center */
-  margin-top: 25vh;
+  margin-top: 10vh;
   margin-left: 10vw;
   font-family: "Roboto", sans-serif;
 }
@@ -92,9 +93,19 @@ body {
   max-width: 30vw;
 }
 
+codersrank-activity {
+  margin-top: 5vh;
+  width: 40%; /* Adjust as needed */
+  height: auto;
+  --legend-margin: 0 12.5vw 0 0;
+}
+
+.activityText {
+  margin-top: 7.5vh;
+}
 .right-section {
   max-width: 45%;
-  max-height: 60%;
+  max-height: 70%;
   position: absolute;
   right: 0;
   color: #fff;
@@ -161,6 +172,16 @@ a {
   max-width: 30vw;
 }
 
+.feed {
+  position: relative; /* This makes the .section a positioned ancestor */
+  width: 100%;
+  height: 20%;
+  background: none;
+  transition: 0.5s;
+  padding-bottom: 1vh;
+  padding-right: 30vw;
+  padding-left: 1vw;
+}
 .section-content {
   padding-left: 5vw;
   padding-top: 5vh;
@@ -179,12 +200,26 @@ a {
   background-color: inherit;
   transition: none;
   transform: none;
+  backdrop-filter: none;
 }
 
 .section-content:hover {
   background-color: #ffffff10;
   transition: 0.5s;
   transform: scale(1.02);
+  backdrop-filter: blur(2.5px);
+}
+.section-content .hidden-image {
+  display: none;
+  max-width: 100%; /* This will make the image responsive, i.e., its width will be 100% of its parent */
+  max-height: 300px; /* Adjust as needed */
+  object-fit: cover; /* This will scale the image while maintaining its aspect ratio */
+  transition: 0.5s;
+}
+
+.section-content:hover .hidden-image {
+  display: block;
+  transition: 0.5s;
 }
 
 h3.role span {

@@ -4,7 +4,10 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script src="https://kit.fontawesome.com/0f6a8fd9b7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
+  <script src="https://unpkg.com/@codersrank/activity@x.x.x/codersrank-activity.min.js"></script>
 </head>
+
   <div id="background"></div>
   <title>nathan | portfolio</title>
  
@@ -19,7 +22,10 @@
       I'm passionate about building software that makes a difference in
       people's lives.
     </p>
+    <p class="activityText">...</p>
+    <codersrank-activity username="nhuijser" branding="false" weeks="21" tooltip legend class="activity">...</codersrank-activity>
   </div>
+  
 
 
   <div class="right-section">
@@ -45,6 +51,7 @@
           foreach ($tags as $tag) {
             echo '<p>' . $tag . '</p>';
           }
+          
           echo '</div>';
       
       echo '</div>
@@ -56,7 +63,7 @@
     <div class="section-content">
       <h3 class="contact">Contact</h3>
       <div class="contact-details">
-        <p><a href="mailto:huijsernathan@gmail.com" class="email-button"><i class="fa-solid fa-envelope"></i> huijsernathan@gmail.com</a></p>
+        <p><i class="fa-solid fa-envelope"></i>&#104;&#117;&#105;&#106;&#115;&#101;&#114;&#110;&#97;&#116;&#104;&#97;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</p>
       </div>
     </div>
   </div>
@@ -74,6 +81,13 @@
       console.log("particles.json loaded...");
     }
   );
+
+    function onData(event) {
+      console.log(event.detail.total)
+      document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> contributions in the last 21 weeks';
+}
+document.querySelector('.activity').addEventListener('data', onData);
 </script>
+
 </body>
 </html>
