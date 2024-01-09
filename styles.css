@@ -203,35 +203,43 @@ a {
   backdrop-filter: none;
 }
 
-.section-content:hover {
+.section-content:hover,
+.section-content-deprecated:hover {
   background-color: #ffffff10;
   transition: 0.5s;
   transform: scale(1.02);
   backdrop-filter: blur(2.5px);
-}
-.section-content .hidden-image {
-  display: none;
-  max-width: 100%; /* This will make the image responsive, i.e., its width will be 100% of its parent */
-  max-height: 300px; /* Adjust as needed */
-  object-fit: cover; /* This will scale the image while maintaining its aspect ratio */
-  transition: 0.5s;
-}
-
-.section-content:hover .hidden-image {
-  display: block;
-  transition: 0.5s;
 }
 
 h3.role span {
   transition: 0.5s;
 }
 
-.section-content:hover h3.role span {
-  font-size: 2.3rem;
+.section-content-deprecated {
+  padding-left: 5vw;
+  padding-top: 5vh;
+  margin-right: 2.5vw;
+  border-radius: 2.5vw;
+  transition: 0.5s;
+  margin-bottom: 1vh;
+  width: 75%;
+  float: right;
+  text-align: left;
+  padding-bottom: 5vh;
   transition: 0.5s;
 }
 
-.section-content p {
+.section-content-deprecated:hover {
+  background-color: rgba(255, 78, 78, 0.139);
+}
+
+.section-content:hover h3.role span {
+  font-size: 2.1rem;
+  transition: 0.5s;
+}
+
+.section-content p,
+.section-content-deprecated p {
   color: #ffffff;
   font-size: 1.15rem;
   margin: 0;

@@ -36,8 +36,15 @@
       $count = 0;
 
       foreach ($result as $row) {
-        echo '<div class="section" id="projects">
-        <div class="section-content">
+
+        echo '<div class="section" id="projects">';
+        if($row['deprecated'] == true) {
+         echo '<div class="section-content-deprecated">';
+        } else {
+          echo '<div class="section-content">';
+        }
+
+        echo '
           <h3 class="role"><span>
             ' . $row['project'] . '</span><a href="' . $row['github'] . '"><i class="fa-brands fa-github fa-xl"></i></a>
           </h3>
