@@ -13,7 +13,7 @@
  
 
   <div class="dark-mode-button">
-    <i id="switch-icon" class="fa-solid fa-sun fa-2xl" style="color: #ffffff;"></i>
+    <i id="switch-icon" class="fa-solid fa-sun fa-xl" style="color: #ffffff;"></i>
   </div>
   <div class="header">
     <h1><strong>Nathan</strong></h1>
@@ -63,7 +63,7 @@
     <div class="section-content">
       <h3 class="contact">Contact</h3>
       <div class="contact-details">
-        <p><i class="fa-solid fa-envelope"></i>&#104;&#117;&#105;&#106;&#115;&#101;&#114;&#110;&#97;&#116;&#104;&#97;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</p>
+      <p> <i class="fa-solid fa-envelope"></i> &#104;&#117;&#105;&#106;&#115;&#101;&#114;&#110;&#97;&#116;&#104;&#97;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</p>
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
 
     function onData(event) {
       console.log(event.detail.total)
-      document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> contributions in the last 21 weeks';
+      document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> GitHub contributions in the last 21 weeks';
 }
 document.querySelector('.activity').addEventListener('data', onData);
 </script>

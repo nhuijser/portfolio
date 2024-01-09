@@ -116,7 +116,7 @@ codersrank-activity {
   scrollbar-width: thin;
   scrollbar-color: black transparent;
   margin-top: 15vh;
-  margin-right: 10vw;
+  margin-right: 7.5vw;
 }
 
 .right-section::-webkit-scrollbar {
@@ -256,6 +256,8 @@ h3.role span {
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
   color: rgb(255, 255, 255);
   font-size: 2rem;
   margin: 0;
