@@ -245,24 +245,9 @@ tagsSpan.addEventListener('click', function(event) {
         projectDescription.parentNode.removeChild(submitButton);
         projectDescription.parentNode.removeChild(cancelButton);
 
-        // reset the project title and description
 
-        fetch('../../endpoints/get_project.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: 'id=' + editButton.dataset.id,
-        })
-        .then(response => response.text())
-        .then(data => {
-          console.log(data);
-          const project = JSON.parse(data);
-          projectTitle.innerText = project.project;
-          projectDescription.innerText = project.description;
-        })
       });
-    });
+      });
   });
 
 

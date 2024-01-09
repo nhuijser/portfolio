@@ -296,3 +296,8 @@ h3.role span {
   border-radius: 20px; /* make the tags round */
   border: none; /* remove the border */
 }
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+}

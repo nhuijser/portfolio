@@ -52,10 +52,52 @@
           <p class="text-area">' . $row['description'] . '</p>';
       
           // Fetch tags from the database
-          $tags = explode(',', $row['tags']); // Assuming tags are stored as a comma-separated string
+          $tags = explode(', ', $row['tags']); // Assuming tags are stored as a comma-separated string
       
           echo '<div class="tags">';
           foreach ($tags as $tag) {
+            echo '<script>console.log("' . $tag . '")</script>';
+            if($tag == 'HTML') {
+              $tag = '<i class="fa-brands fa-html5 fa-lg"></i> ' . $tag . '';
+            } 
+            if($tag == 'CSS') {
+              $tag = '<i class="fa-brands fa-css3-alt fa-lg"></i> ' . $tag . '';
+            } 
+            if($tag == 'JavaScript') {
+              $tag = '<i class="fa-brands fa-js-square fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'PHP') {
+              $tag = '<i class="fa-brands fa-php fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'SQL') {
+              $tag = '<i class="fa-solid fa-database fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'Java') {
+              $tag = '<i class="fa-brands fa-java fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'DiscordJS') {
+              $tag = '<i class="fa-brands fa-discord fa-lg"></i> <abbr title="Discord Library">' . $tag . '</abbr>';
+            }
+            if($tag == 'NodeJS') {
+              $tag = '<i class="fa-brands fa-node-js fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'Python') {
+              $tag = '<i class="fa-brands fa-python fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'C#') {
+              $tag = '<i class="fa-brands fa-windows fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'JSON') {
+              $tag = '<i class="fa-solid fa-code fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'SQLite') {
+              $tag = '<i class="fa-solid fa-database fa-lg"></i> ' . $tag . '';
+            }
+            if($tag == 'MySQL') {
+              $tag = '<i class="fa-brands fa-database fa-lg"></i> ' . $tag . '';
+            }
+
+
             echo '<p>' . $tag . '</p>';
           }
           
