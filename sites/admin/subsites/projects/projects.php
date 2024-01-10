@@ -34,7 +34,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <button class="createButton" id="createButton"><i class="fas fa-plus fa-normal" style="color: #6d63f7;"></i></button>
         </header>
         <?php
-
+echo '<script>console.log("test")</script>';
 
   $json = file_get_contents('database.json');
 
