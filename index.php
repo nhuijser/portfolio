@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Nathan Huijser | Portfolio" property="og:title" />
+<meta content="Portfolio displaying Nathan's experiences, skills & more..." property="og:description" />
+<meta content="https://nhuijser.me" property="og:url" />
+<meta content="#304853" data-react-helmet="true" name="theme-color" />
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script src="https://kit.fontawesome.com/0f6a8fd9b7.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
   <script src="https://unpkg.com/@codersrank/activity@x.x.x/codersrank-activity.min.js"></script>
 </head>
+<body>
 
   <div id="background"></div>
   <title>Nathan Huijser | Portfolio</title>
-  <meta content="Nathan Huijser | Portfolio" property="og:title" />
-<meta content="Portfolio displaying Nathan's experiences, skills & more..." property="og:description" />
-<meta content="https://nhuijser.me" property="og:url" />
-<meta content="#304853" data-react-helmet="true" name="theme-color" />
-
+ 
   <div class="dark-mode-button">
     <i id="switch-icon" class="fa-solid fa-sun fa-xl" style="color: #ffffff;"></i>
   </div>
