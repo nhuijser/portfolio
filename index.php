@@ -54,8 +54,7 @@
   $data = json_decode($json, true);
 
   $username = $data['user'];
-    $tempPass = $data['password'];
-  $password = password_verify($tempPass, PASSWORD_DEFAULT);;
+$password = $data['password'];
 
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
     } catch (PDOException $e) {
