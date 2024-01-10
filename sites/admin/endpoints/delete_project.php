@@ -1,8 +1,10 @@
 <?php
-   $data = $_POST['data'];
+    $json = file_get_contents('../../../database.json');
 
-   $username = $data['user'];
-   $password = $data['password'];
+    $data = json_decode($json, true);
+
+    $username = $data['user'];
+    $password = $data['password'];
 
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 $id = $_POST['id'];

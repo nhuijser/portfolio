@@ -5,13 +5,8 @@ try {
 
     $data = json_decode($json, true);
 
-    echo "<script>console.log('" . $data['user'] . "')</script>";
-
     $username = $data['user'];
     $password = $data['password'];
-
-    echo "<script>console.log('" . $username . "')</script>";
-    echo "<script>console.log('" . $password . "')</script>";
 
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 

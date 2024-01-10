@@ -1,5 +1,7 @@
 <?php
-    $data = $_POST['data'];
+    $json = file_get_contents('../../../database.json');
+
+    $data = json_decode($json, true);
 
     $username = $data['user'];
     $password = $data['password'];
