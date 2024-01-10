@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="n0 esc4p3" property="og:title" />
-    <meta content="A web horror game..." property="og:description" />
-    <meta content="https://thuis.wierper.net/no-escape" property="og:url" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<meta content="Nathan Huijser | Portfolio" property="og:title" />
+    <meta content="Nathan's Portfolio showing his projects, skills & more..." property="og:description" />
+    <meta content="https://nhuijser.me" property="og:url" />
+    <meta content="#304853" data-react-helmet="true" name="theme-color" />
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css" />
