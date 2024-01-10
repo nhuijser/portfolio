@@ -2,8 +2,11 @@
 try {
 
     $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-
-    error_log($ip_address);
+    
+    if($ip_address != '2a02:a45f:2b4d:0:8d2f:65b9:2ce4:f1e8') {
+        echo "You are not authorized to access this page.";
+        exit;
+    }
     
     $json = file_get_contents('../../../database.json');
 
