@@ -88,7 +88,6 @@ $password = $data['password'];
       
           echo '<div class="tags">';
           foreach ($tags as $tag) {
-            echo '<script>console.log("' . $tag . '")</script>';
             if($tag == 'HTML') {
               $tag = '<i class="fa-brands fa-html5 fa-lg"></i> ' . $tag . '';
             } 
@@ -166,7 +165,6 @@ $password = $data['password'];
 <script>
 
 function onData(event) {
-      console.log(event.detail.total)
       document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> GitHub contributions in the last 21 weeks';
 }
 document.querySelector('.activity').addEventListener('data', onData);
