@@ -16,9 +16,10 @@ if ($api_key !== $real_api_key) {
 }
 
   $username = $data['user'];
+  echo '<script>console.log("Username: ' . $username . '")</script>';
 $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', $username, $password);
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
     // Get the total number of projects
     $stmt = $dbh->query("SELECT COUNT(*) as total FROM projects");
