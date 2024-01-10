@@ -1,6 +1,7 @@
 <?php
 try {
     
+    echo $_SERVER;
     $json = file_get_contents('../../../database.json');
 
     $data = json_decode($json, true);
