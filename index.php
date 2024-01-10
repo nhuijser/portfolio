@@ -36,7 +36,11 @@
 
   <div class="right-section">
     <?php 
+    try {
       $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+    } catch (PDOException $e) {
+      echo "<script>alert(Error: " . $e->getMessage() . ")</script>";
+    }
 
       if($dbh) {
       $sql = "SELECT * FROM projects WHERE deleted = 0;";
@@ -123,7 +127,7 @@
         <p class="text-area">No projects found.</p>
       </div>
       ';
-      
+
     }
     ?>
 
