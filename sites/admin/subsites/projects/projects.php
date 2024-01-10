@@ -41,10 +41,13 @@ echo '<script>console.log("test")</script>';
   $data = json_decode($json, true);
 
   $username = $data['username'];
-  $tempPass = $data['password'];
-  $password = password_verify($tempPass, PASSWORD_DEFAULT);
+  $password = $data['password'];
 
+  echo "<script>console.log('" . $username . "')</script>";
+  echo "<script>console.log('" . $password . "')</script>";
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+
+  
   $sql = "SELECT * FROM projects";
   $result = $dbh->query($sql);
 
