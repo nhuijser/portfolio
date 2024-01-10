@@ -36,7 +36,7 @@ if($_SESSION["loggedin"] === true){
   $username = $data['user'];
 $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', $username, $password);
 
 // check if connection was succesful
 

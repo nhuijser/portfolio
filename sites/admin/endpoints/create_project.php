@@ -8,16 +8,17 @@ try {
   
     $real_api_key = $data['api_key'];
 
+
 if ($api_key !== $real_api_key) {
     http_response_code(403);
     echo json_encode(['error' => 'Invalid API key']);
-    exit;
+    return;
 }
 
   $username = $data['user'];
 $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', $username, $password);
 
     // Get the total number of projects
     $stmt = $dbh->query("SELECT COUNT(*) as total FROM projects");
