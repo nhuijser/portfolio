@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <?php
 echo '<script>console.log("test")</script>';
 
-  $json = file_get_contents('database.json');
+  $json = file_get_contents('../../../../database.json');
 
   echo '<script>console.log("test2")</script>';
   echo "<script>console.log('" . $json . "')</script>";
