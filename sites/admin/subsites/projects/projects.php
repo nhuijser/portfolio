@@ -39,7 +39,7 @@ echo '<script>console.log("test")</script>';
   $json = file_get_contents('../../../../database.json');
 
   echo '<script>console.log("test2")</script>';
-  echo "<script>console.log('" . $json . "')</script>";
+  echo "<script>console.log(`" . $json . "`)</script>";
 // Decode the JSON into an associative array
   $data = json_decode($json, true);
 
