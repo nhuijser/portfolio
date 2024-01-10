@@ -117,7 +117,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       fetch('../../endpoints/create_project.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       })
       .then(response => response.text())
@@ -140,7 +140,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       fetch('../../endpoints/delete_project.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',        },
+          'Content-Type': 'application/x-www-form-urlencoded',        },
         body: 'id=' + projectId,
       })
       .then(response => response.text())
@@ -228,7 +228,7 @@ tagsSpan.addEventListener('click', function(event) {
   fetch('../../endpoints/edit_project.php', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
   })
