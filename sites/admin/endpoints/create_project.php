@@ -1,7 +1,7 @@
 <?php
 try {
     
-    echo $_SERVER;
+    error_log(implode(" ", $_SERVER));
     $json = file_get_contents('../../../database.json');
 
     $data = json_decode($json, true);
