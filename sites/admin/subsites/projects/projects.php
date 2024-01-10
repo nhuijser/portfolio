@@ -118,7 +118,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'apiKey': 'blabla'
+          'X-API-Key': 'blabla'
         },
       })
       .then(response => response.text())
