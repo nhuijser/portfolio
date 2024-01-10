@@ -12,8 +12,19 @@
   <script src="https://kit.fontawesome.com/0f6a8fd9b7.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
   <script src="https://unpkg.com/@codersrank/activity@x.x.x/codersrank-activity.min.js"></script>
+
+  
 </head>
 <body>
+<script>
+  particlesJS.load(
+    "particles-js",
+    "./particles/particles.json",
+    function () {
+      console.log("particles.json loaded...");
+    }
+  );
+</script>
 
   <div id="background"></div>
   <title>Nathan Huijser | Portfolio</title>
@@ -144,17 +155,9 @@
   <script src="./script.js"></script>
   <div id="particles-js"></div>
 
-<!-- particles -->
 <script>
-  particlesJS.load(
-    "particles-js",
-    "./particles/particles.json",
-    function () {
-      console.log("particles.json loaded...");
-    }
-  );
 
-    function onData(event) {
+function onData(event) {
       console.log(event.detail.total)
       document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> GitHub contributions in the last 21 weeks';
 }
