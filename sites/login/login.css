@@ -8,9 +8,7 @@ body {
 .login-form {
   display: flex;
   flex-direction: column;
-  align-items: right;
-  margin-right: 60vh;
-  margin-top: 20rem;
+  justify-content: center;
 }
 
 .login-form label {
@@ -37,7 +35,7 @@ body {
   border: none;
   border-radius: 10vh;
   width: 10rem;
-  justify-content: right;
+  justify-content: center;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   cursor: pointer;
@@ -51,29 +49,4 @@ body {
 .login-form button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 0 0.5rem #6d63f74f;
-}
-
-.text-box {
-  position: absolute;
-  left: 0;
-  margin-left: 50vh;
-  margin-top: 30vh;
-}
-
-.text-box h1 {
-  color: #6d63f7;
-  font-size: 3rem;
-  transition: 0.5s;
-}
-
-.text-box p {
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.text-box a {
-  color: #6d63f7;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: 0.5s;
 }

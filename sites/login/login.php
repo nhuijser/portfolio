@@ -7,15 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-    <div class="text-box">
-        <h1 id=hey-text>Hey!</h1>
-        <p>You're probably not supposed to be here...</p>
-        <p>Please 
-            <a href="../../index.php" id="click-here-text">
-                click here
-            </a> 
-            to return to my portfolio :D</p>
-    </div>
+   
     <form class="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
