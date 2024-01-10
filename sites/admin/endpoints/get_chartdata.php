@@ -7,7 +7,8 @@ $json = file_get_contents('../../../database.json');
   $data = json_decode($json, true);
 
   $username = $data['user'];
-  $password = $data['password'];
+    $tempPass = $data['password'];
+  $password = password_verify($tempPass, PASSWORD_DEFAULT);;
 
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
