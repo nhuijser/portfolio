@@ -130,7 +130,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'HTTP_X_API_KEY': $api_key
+          'X_API_KEY': $api_key
         },
       })
       .then(response => response.text())
@@ -154,7 +154,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'HTTP_X_API_KEY': $api_key
+          'X_API_KEY': $api_key
         },
         body: 'id=' + projectId,
       })
@@ -179,7 +179,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'HTTP_X_API_KEY': $api_key
+          'X_API_KEY': $api_key,
         },
         body: 'id=' + projectId,
       })
@@ -245,7 +245,7 @@ tagsSpan.addEventListener('click', function(event) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-          'HTTP_X_API_KEY': $api_key
+          'X_API_KEY': $api_key
     },
     body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
   })
