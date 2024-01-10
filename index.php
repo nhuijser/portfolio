@@ -27,6 +27,7 @@
 </script>
 
   <div id="background"></div>
+  <div id="particles-js"></div>
   <title>Nathan Huijser | Portfolio</title>
  
   <div class="dark-mode-button">
@@ -161,9 +162,7 @@ $password = $data['password'];
   </div>
   </div>
 
-  <script src="./script.js"></script>
-  <div id="particles-js"></div>
-
+<script src="./script.js"></script>
 <script>
 
 function onData(event) {
