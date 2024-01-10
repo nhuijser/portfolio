@@ -10,8 +10,11 @@
 </head>
 
   <div id="background"></div>
-  <title>nathan | portfolio</title>
- 
+  <title>Nathan Huijser | Portfolio</title>
+  <meta content="Nathan Huijser | Portfolio" property="og:title" />
+<meta content="Portfolio displaying Nathan's experiences, skills & more..." property="og:description" />
+<meta content="https://nhuijser.me" property="og:url" />
+<meta content="#304853" data-react-helmet="true" name="theme-color" />
 
   <div class="dark-mode-button">
     <i id="switch-icon" class="fa-solid fa-sun fa-xl" style="color: #ffffff;"></i>
