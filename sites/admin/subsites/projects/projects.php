@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <?php
 
 
-  $json = file_get_contents('../../../../database.json');
+  $json = file_get_contents('database.json');
 
 // Decode the JSON into an associative array
   $data = json_decode($json, true);
