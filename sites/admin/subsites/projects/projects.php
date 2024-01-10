@@ -160,7 +160,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     const projectId = showButton.dataset.id;
     showButton.addEventListener('click', () => {
       console.log("Show button clicked");
-      fetch('../../endpoints/json', {
+      fetch('../../endpoints/show_project.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
