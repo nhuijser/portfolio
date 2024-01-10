@@ -11,6 +11,7 @@ try {
     $password = $data['password'];
 
     echo "<script>console.log('" . $username . "')</script>";
+    echo "<script>console.log('" . $password . "')</script>";
 
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
