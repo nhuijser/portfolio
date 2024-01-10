@@ -82,7 +82,7 @@
                         $tag = '<i class="fa-brands fa-html5 fa-lg"></i> ' . $tag . '';
                     }
                     if($tag == 'CSS') {
-                        $tag = '<i class="fa-brands fa-css fa-lg"></i> ' . $tag . '';
+                        $tag = '<i class="fa-brands fa-css3 fa-lg"></i> ' . $tag . '';
                     }
                     if($tag == 'JavaScript') {
                         $tag = '<i class="fa-brands fa-js-square fa-lg"></i> ' . $tag . '';
