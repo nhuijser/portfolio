@@ -13,7 +13,7 @@
 
 if ($api_key !== $real_api_key) {
     http_response_code(403);
-    echo json_encode(['error' => 'Invalid API key']);
+    echo 'Invalid API key';
     return;
 }
 
