@@ -39,7 +39,7 @@
     try {
       $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
     } catch (PDOException $e) {
-      echo "<script>console.log(Error: " . $e->getMessage() . ")</script>";
+      echo "<script>alert(Error: " . $e->getMessage() . ")</script>";
     }
 
       if($dbh) {
@@ -114,7 +114,9 @@
           }
           
           echo '</div>';
-       
+      
+      echo '</div>
+      </div>'; 
       }
     } else {
       echo '<div class="section" id="projects">
@@ -124,13 +126,9 @@
         <h4 class="title">Developer</h4>
         <p class="text-area">No projects found.</p>
       </div>
-      
       ';
 
     }
-
-    echo '</div>
-    </div>';
     ?>
 
   <div class="section" id="contact">
