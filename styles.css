@@ -84,13 +84,14 @@ body {
 .header p[class="type"] {
   margin: 0;
   font-size: 2rem;
+  max-width: 40vw;
 }
 
 .header p[class="description"] {
   color: #ffffff;
   opacity: 80%;
   font-size: 1.5rem;
-  max-width: 30vw;
+  max-width: 35vw;
 }
 
 codersrank-activity {
@@ -328,6 +329,10 @@ abbr {
 
   .header h1 {
     font-size: 3rem;
+  }
+
+  .header p[class="type"] {
+    max-width: 100%;
   }
 
   .header p[class="description"] {
