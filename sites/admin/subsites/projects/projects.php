@@ -34,8 +34,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <button class="createButton" id="createButton"><i class="fas fa-plus fa-normal" style="color: #6d63f7;"></i></button>
         </header>
         <?php
-echo '<script>console.log("test")</script>';
-
   $json = file_get_contents('../../../../database.json');
 
   $data = json_decode($json, true);
@@ -99,17 +97,7 @@ echo '<script>console.log("test")</script>';
     </div>
     <script>
 
-
-      // existing code...
-
-  // get all section elements
   const sections = document.querySelectorAll('section');
-
-  $json = file_get_contents('../../../../database.json');
-
-  $data = json_decode($json, true);
-
-  $api_key = $data['api_key'];
 
   sections.forEach((section) => {
     section.addEventListener('click', (event) => {
@@ -130,7 +118,6 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X_API_KEY': $api_key
         },
       })
       .then(response => response.text())
@@ -153,9 +140,7 @@ echo '<script>console.log("test")</script>';
       fetch('../../endpoints/delete_project.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'X_API_KEY': $api_key
-        },
+          'Content-Type': 'application/json',        },
         body: 'id=' + projectId,
       })
       .then(response => response.text())
@@ -179,7 +164,6 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'X_API_KEY': $api_key,
         },
         body: 'id=' + projectId,
       })
@@ -245,7 +229,6 @@ tagsSpan.addEventListener('click', function(event) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-          'X_API_KEY': $api_key
     },
     body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
   })
