@@ -30,6 +30,6 @@ $password = $data['password'];
     $stmt = $dbh->prepare("INSERT INTO projects (idprojects, project, description, role, github, tags, deprecated, deleted) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$new_id, 'New Project', 'New Project Description', 'Developer', 'https://github.com/nhuijser', 'Tags, 1, 2', 0, 0]);
 } catch (PDOException $e) {
-    echo "<script>alert(Error: " . $e->getMessage() . ")</script>";
+    echo "Error: " . $e->getMessage() . ")";
 }
 ?>
