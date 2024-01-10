@@ -50,7 +50,7 @@
     try {
       $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
     } catch (PDOException $e) {
-      echo "<script>console.log(" . $e->getMessage() . ")</script>";
+      echo "<script>console.log('" . $e->getMessage() . "')</script>";
     }
 
       if($dbh) {
