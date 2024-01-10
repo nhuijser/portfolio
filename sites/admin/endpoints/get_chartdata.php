@@ -3,7 +3,14 @@ header('Content-Type: application/json');
 
 // use db to select data
 
-$dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+     $json = file_get_contents('database.json');
+
+  $data = json_decode($json, true);
+
+  $username = $data['user'];
+  $password = $data['password'];
+
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
 $sql = "SELECT count(*) FROM projects WHERE deleted = 1";
 $stmt = $dbh->prepare($sql);

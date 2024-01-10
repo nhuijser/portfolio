@@ -310,21 +310,20 @@ abbr {
     overflow: auto;
   }
   body {
-    min-height: 125vh;
+    min-height: 110vh;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
 
   #background {
     height: auto;
-    min-height: 125vh;
+    min-height: 110vh;
   }
   .header {
     margin-left: 0;
     margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
     text-align: center;
-    height: 50vh;
   }
 
   .header h1 {
@@ -336,20 +335,19 @@ abbr {
   }
 
   .activityText {
-    margin-top: 5vh;
+    display: none;
   }
 
   codersrank-activity {
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    --legend-margin: 0 12.5vw 0 0;
+    display: none;
+  }
+
+  .section-content:hover,
+  .section-content-deprecated:hover {
+    background-color: inherit;
+    transition: none;
+    transform: none;
+    backdrop-filter: none;
   }
 
   .right-section {
@@ -375,6 +373,7 @@ abbr {
     text-align: center;
     width: 100%;
     max-width: 80%;
+    padding-left: 10vw;
   }
 
   .section-content p,

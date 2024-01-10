@@ -29,7 +29,14 @@ if($_SESSION["loggedin"] === true){
     exit;
 }
 
-$dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+     $json = file_get_contents('database.json');
+
+  $data = json_decode($json, true);
+
+  $username = $data['user'];
+  $password = $data['password'];
+
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
 // check if connection was succesful
 

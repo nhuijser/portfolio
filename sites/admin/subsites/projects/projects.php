@@ -34,7 +34,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <button class="createButton" id="createButton"><i class="fas fa-plus fa-normal" style="color: #6d63f7;"></i></button>
         </header>
         <?php
-  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+
+
+  $json = file_get_contents('database.json');
+
+// Decode the JSON into an associative array
+  $data = json_decode($json, true);
+
+// Access the username and password
+  $username = $data['username'];
+  $password = $data['password'];
+
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
   $sql = "SELECT * FROM projects";
   $result = $dbh->query($sql);
 
