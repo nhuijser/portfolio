@@ -37,6 +37,8 @@
   <div class="right-section">
     <?php 
       $dbh = new PDO('mysql:host=localhost;dbname=fullstack', 'root', 'root');
+
+      if($dbh) {
       $sql = "SELECT * FROM projects WHERE deleted = 0;";
       $result = $dbh->query($sql);
       $count = 0;
@@ -110,8 +112,19 @@
           echo '</div>';
       
       echo '</div>
-      </div>';
+      </div>'; 
       }
+    } else {
+      echo '<div class="section" id="projects">
+      <div class="section-content">
+        <h3 class="role"><span>Projects</span>
+        </h3>
+        <h4 class="title">Developer</h4>
+        <p class="text-area">No projects found.</p>
+      </div>
+      ';
+      
+    }
     ?>
 
   <div class="section" id="contact">
