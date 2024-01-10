@@ -15,6 +15,7 @@ if ($api_key !== $real_api_key) {
     return;
 }
 
+$data = json_decode($json, true);
   $username = $data['user'];
   echo '<script>console.log("Username: ' . $username . '")</script>';
 $password = $data['password'];
