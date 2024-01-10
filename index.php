@@ -137,6 +137,7 @@
         <h4 class="title">Developer</h4>
         <p class="text-area">No projects found.</p>
       </div>
+      </div>
       ';
 
     }
