@@ -40,11 +40,9 @@ echo '<script>console.log("test")</script>';
 
   $data = json_decode($json, true);
 
-  $username = $data['username'];
+  $username = $data['user'];
   $password = $data['password'];
 
-  echo "<script>console.log('" . $username . "')</script>";
-  echo "<script>console.log('" . $password . "')</script>";
   $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
   
