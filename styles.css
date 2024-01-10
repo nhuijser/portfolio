@@ -381,6 +381,12 @@ abbr {
     max-width: 100%;
   }
 
+  #contact .section-content h3 {
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+
   h3.role span {
     max-width: 100%;
     text-align: center;
