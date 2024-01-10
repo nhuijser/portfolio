@@ -46,27 +46,27 @@ if($_SESSION["loggedin"] === true){
 //     echo "Database Connection failed<br><br>";
 // }
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-if(!$_POST["username"] && !$_POST["password"]) {
-echo "Please enter a username and password";
+if(!$_POST["username"] || !$_POST["password"]) {
+    echo "Please enter a username and password";
 } else {    
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
+    // Use a prepared statement to prevent SQL injection
+    $stmt = $dbh->prepare("SELECT * FROM login WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
 
-    $result = $dbh->query($sql);
-
-    if ($result->rowCount() > 0) {
+    // Verify the password with password_verify
+    if ($user && password_verify($password, $user['password'])) {
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $username;
         
         header("location: ../admin/admin.php");
-        print_r("Login succesful");
+        print_r("Login successful");
     } else {
         echo "<script>alert('Incorrect username or password')</script>";
     }
-}   
+
 }
 ?>
