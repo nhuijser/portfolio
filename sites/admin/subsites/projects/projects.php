@@ -49,6 +49,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $sql = "SELECT * FROM projects";
   $result = $dbh->query($sql);
 
+  echo "<script>console.log('" . $result->rowCount() . "')</script>";
+
 
   while ($row = $result->fetch()) {
     echo "<script>console.log('" . $row['deleted'] . "')</script>";
