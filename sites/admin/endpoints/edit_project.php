@@ -1,12 +1,21 @@
 <?php
-    $json = file_get_contents('../../../database.json');
+ $json = file_get_contents('../../../database.json');
 
-    $data = json_decode($json, true);
+ $data = json_decode($json, true);
 
-    $username = $data['user'];
-    $password = $data['password'];
+ $allowedIP = $data['allowedIP'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+ $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+ 
+ if($ip_address != $allowedIP) {
+     echo "You are not authorized to access this page.";
+     exit;
+ }
+
+ $username = $data['user'];
+ $password = $data['password'];
+
+$dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 $id = $_POST['id'];
 $description = $_POST['description'];
 $github = $_POST['github'];
