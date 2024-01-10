@@ -1,7 +1,10 @@
 <?php
 try {
+
+    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+
+    error_log($ip_address);
     
-    error_log(implode(" ", $_SERVER));
     $json = file_get_contents('../../../database.json');
 
     $data = json_decode($json, true);
