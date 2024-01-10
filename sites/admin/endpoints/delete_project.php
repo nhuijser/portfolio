@@ -1,6 +1,5 @@
 <?php
-     $json = file_get_contents('database.json');
-
+     $json = file_get_contents('../../../database.json');
   $data = json_decode($json, true);
 
   $username = $data['user'];

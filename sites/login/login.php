@@ -29,7 +29,7 @@ if($_SESSION["loggedin"] === true){
     exit;
 }
 
-     $json = file_get_contents('database.json');
+     $json = file_get_contents('../../database.json');
 
   $data = json_decode($json, true);
 
