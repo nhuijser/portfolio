@@ -333,6 +333,8 @@ abbr {
 
   .header p[class="type"] {
     max-width: 100%;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
   }
 
   .header p[class="description"] {
