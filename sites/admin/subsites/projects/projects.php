@@ -129,7 +129,7 @@ echo '<script>console.log("test")</script>';
       fetch('../../endpoints/create_project.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
           'X_API_KEY': $api_key
         },
       })
@@ -153,7 +153,7 @@ echo '<script>console.log("test")</script>';
       fetch('../../endpoints/delete_project.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
           'X_API_KEY': $api_key
         },
         body: 'id=' + projectId,
@@ -175,7 +175,7 @@ echo '<script>console.log("test")</script>';
     const projectId = showButton.dataset.id;
     showButton.addEventListener('click', () => {
       console.log("Show button clicked");
-      fetch('../../endpoints/show_project.php', {
+      fetch('../../endpoints/json', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -244,7 +244,7 @@ tagsSpan.addEventListener('click', function(event) {
   fetch('../../endpoints/edit_project.php', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
           'X_API_KEY': $api_key
     },
     body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
