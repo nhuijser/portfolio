@@ -17,7 +17,7 @@ if ($api_key !== $real_api_key) {
   $username = $data['user'];
 $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', $username, $password);
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 $id = $_POST['id'];
 $description = $_POST['description'];
 $github = $_POST['github'];
