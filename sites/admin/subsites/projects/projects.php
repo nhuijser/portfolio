@@ -105,6 +105,12 @@ echo '<script>console.log("test")</script>';
   // get all section elements
   const sections = document.querySelectorAll('section');
 
+  $json = file_get_contents('../../../../database.json');
+
+  $data = json_decode($json, true);
+
+  $api_key = $data['api_key'];
+
   sections.forEach((section) => {
     section.addEventListener('click', (event) => {
       if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I' || event.target.tagName === 'INPUT' || event.target.tagName === "P") {
@@ -124,6 +130,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
+          'HTTP_X_API_KEY': $api_key
         },
       })
       .then(response => response.text())
@@ -147,6 +154,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
+          'HTTP_X_API_KEY': $api_key
         },
         body: 'id=' + projectId,
       })
@@ -171,6 +179,7 @@ echo '<script>console.log("test")</script>';
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
+          'HTTP_X_API_KEY': $api_key
         },
         body: 'id=' + projectId,
       })
@@ -236,6 +245,7 @@ tagsSpan.addEventListener('click', function(event) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+          'HTTP_X_API_KEY': $api_key
     },
     body: 'id=' + encodeURIComponent(editButton.dataset.id) + '&project=' + encodeURIComponent(projectTitle.innerText) + '&description=' + encodeURIComponent(projectDescription.innerText) + '&github=' + encodeURIComponent(projectGithubLink.innerHTML) + '&role=' + encodeURIComponent(roleText.innerHTML) + '&tags=' + encodeURIComponent(tagsSpan.innerHTML),
   })
