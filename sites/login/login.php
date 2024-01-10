@@ -34,10 +34,17 @@ if($_SESSION["loggedin"] === true){
   $data = json_decode($json, true);
 
   $username = $data['user'];
-$password = $data['password'];
+  $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=fullstack', $username, $password);
+  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
 
+// check if connection was succesful
+
+// if ($dbh) {
+//     echo "Database Connection succesful<br><br>";
+// } else {
+//     echo "Database Connection failed<br><br>";
+// }
 
 if(!$_POST["username"] || !$_POST["password"]) {
     echo "Please enter a username and password";
@@ -45,10 +52,12 @@ if(!$_POST["username"] || !$_POST["password"]) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
+    // Use a prepared statement to prevent SQL injection
     $stmt = $dbh->prepare("SELECT * FROM login WHERE username = ?");
     $stmt->execute([$username]);
     $user = $stmt->fetch();
 
+    // Verify the password with password_verify
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $username;
@@ -58,6 +67,6 @@ if(!$_POST["username"] || !$_POST["password"]) {
     } else {
         echo "<script>alert('Incorrect username or password')</script>";
     }
-
+}
 }
 ?>
