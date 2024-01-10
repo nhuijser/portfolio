@@ -82,7 +82,7 @@
                         $tag = '<i class="fa-brands fa-html5 fa-lg"></i> ' . $tag . '';
                     }
                     if($tag == 'CSS') {
-                        $tag = '<i class="fa-brands fa-css3 fa-lg"></i> ' . $tag . '';
+                        $tag = '<i class="fa-brands fa-css fa-lg"></i> ' . $tag . '';
                     }
                     if($tag == 'JavaScript') {
                         $tag = '<i class="fa-brands fa-js-square fa-lg"></i> ' . $tag . '';
@@ -117,7 +117,15 @@
                     if($tag == 'NodeJS') {
                         $tag = '<i class="fa-brands fa-node-js fa-lg"></i> ' . $tag . '';
                     }
-
+                    if($tag == 'ReactJS') {
+                        $tag = '<i class="fa-brands fa-react fa-lg"></i> ' . $tag . '';
+                    }
+                    if($tag == 'JSON') {
+                        $tag = '<i class="fa-brands fa-js-code fa-lg"></i> ' . $tag . '';
+                    }
+                    if($tag == 'SQLite') {
+                        $tag = '<i class="fa-solid fa-database fa-lg"></i> ' . $tag . '';
+                    }
 
                     echo '<p>' . $tag . '</p>';
                 }
