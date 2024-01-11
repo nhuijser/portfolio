@@ -5,7 +5,9 @@
  $username = $data['user'];
  $password = $data['password'];
 
-$dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+    $database = $data['database'];
+
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
 
 $sql = "SELECT count(*) FROM projects WHERE deleted = 1";
 $stmt = $dbh->prepare($sql);

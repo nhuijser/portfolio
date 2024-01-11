@@ -41,7 +41,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $username = $data['user'];
   $password = $data['password'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+      $database = $data['database'];
+
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
 
   
   $sql = "SELECT * FROM projects";

@@ -7,8 +7,9 @@ try {
 
     $username = $data['user'];
     $password = $data['password'];
+    $database = $data['database'];
 
-  $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
 
     // Get the total number of projects
     $stmt = $dbh->query("SELECT COUNT(*) as total FROM projects");

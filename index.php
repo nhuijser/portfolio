@@ -48,7 +48,9 @@
             $data = json_decode($json, true);
             $username = $data['user'];
             $password = $data['password'];
-            $dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+                $database = $data['database'];
+
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
         } catch (PDOException $e) {
         }
 

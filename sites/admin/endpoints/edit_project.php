@@ -6,7 +6,9 @@
  $username = $data['user'];
  $password = $data['password'];
 
-$dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+    $database = $data['database'];
+
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
 $id = $_POST['id'];
 $description = $_POST['description'];
 $github = $_POST['github'];

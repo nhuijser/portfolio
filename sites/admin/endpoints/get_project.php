@@ -6,7 +6,9 @@
  $username = $data['user'];
  $password = $data['password'];
 
-$dbh = new PDO('mysql:host=localhost;dbname=portfolio', $username, $password);
+    $database = $data['database'];
+
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $database, $username, $password);
 $id = $_POST['id'];
 $sql = "UPDATE projects SET deleted = 0 WHERE idprojects = :id";
 $stmt = $dbh->prepare($sql);
