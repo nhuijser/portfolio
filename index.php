@@ -38,7 +38,7 @@
             I'm passionate about building software that makes a difference in people's lives.
         </p>
         <p class="activityText">...</p>
-        <codersrank-activity username="nhuijser" branding="false" weeks="21" tooltip legend class="activity">...</codersrank-activity>
+        <codersrank-activity username="nhuijser" branding="false" weeks="24" tooltip legend class="activity">...</codersrank-activity>
     </div>
 
     <div class="right-section">
@@ -161,7 +161,7 @@
     <script src="./script.js"></script>
     <script>
         function onData(event) {
-            document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> GitHub contributions in the last 21 weeks';
+            document.getElementsByClassName('activityText')[0].innerHTML = '<strong>' + event.detail.total + '</strong> GitHub contributions in the last 24 weeks';
         }
         document.querySelector('.activity').addEventListener('data', onData);
     </script>
